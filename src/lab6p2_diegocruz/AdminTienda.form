@@ -256,51 +256,54 @@
                       <Group type="102" alignment="0" attributes="0">
                           <EmptySpace min="-2" pref="41" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
-                              <Component id="jTextField8" alignment="0" min="-2" pref="148" max="-2" attributes="0"/>
+                              <Component id="tf_fabest" alignment="0" min="-2" pref="148" max="-2" attributes="0"/>
                               <Component id="jLabel17" alignment="0" min="-2" pref="134" max="-2" attributes="0"/>
-                              <Component id="jSpinner3" alignment="0" min="-2" pref="105" max="-2" attributes="0"/>
+                              <Component id="js_aniosest" alignment="0" min="-2" pref="105" max="-2" attributes="0"/>
                               <Component id="jLabel18" alignment="0" min="-2" pref="134" max="-2" attributes="0"/>
-                              <Component id="jButton5" min="-2" pref="190" max="-2" attributes="0"/>
+                              <Component id="jb_agregarest" min="-2" pref="190" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
                               <Group type="102" attributes="0">
-                                  <Group type="103" groupAlignment="0" attributes="0">
-                                      <Group type="102" attributes="0">
-                                          <Group type="103" groupAlignment="1" attributes="0">
-                                              <Component id="jLabel15" alignment="0" max="32767" attributes="0"/>
-                                              <Component id="jTextField9" alignment="0" pref="139" max="32767" attributes="0"/>
-                                          </Group>
-                                          <EmptySpace min="-2" pref="58" max="-2" attributes="0"/>
-                                      </Group>
-                                      <Group type="102" attributes="0">
-                                          <Component id="jTextField11" min="-2" pref="151" max="-2" attributes="0"/>
-                                          <EmptySpace max="32767" attributes="0"/>
-                                      </Group>
+                                  <Group type="103" groupAlignment="1" attributes="0">
+                                      <Component id="jLabel15" alignment="0" max="32767" attributes="0"/>
+                                      <Component id="tf_modest" alignment="0" pref="139" max="32767" attributes="0"/>
                                   </Group>
-                                  <Group type="103" groupAlignment="0" attributes="0">
-                                      <Component id="jLabel21" min="-2" pref="125" max="-2" attributes="0"/>
-                                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                                  <EmptySpace min="-2" pref="58" max="-2" attributes="0"/>
+                              </Group>
+                              <Group type="102" attributes="0">
+                                  <Component id="tf_precioest" min="-2" pref="151" max="-2" attributes="0"/>
+                                  <EmptySpace max="32767" attributes="0"/>
+                              </Group>
+                              <Group type="102" alignment="0" attributes="0">
+                                  <Component id="jLabel16" min="-2" pref="134" max="-2" attributes="0"/>
+                                  <EmptySpace max="32767" attributes="0"/>
+                              </Group>
+                          </Group>
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                                  <Group type="102" alignment="1" attributes="0">
+                                      <Component id="tf_conexionest" max="32767" attributes="0"/>
+                                      <EmptySpace min="-2" pref="20" max="-2" attributes="0"/>
+                                  </Group>
+                                  <Group type="102" attributes="0">
+                                      <Group type="103" groupAlignment="0" attributes="0">
+                                          <Component id="jLabel20" min="-2" pref="125" max="-2" attributes="0"/>
                                           <Group type="102" attributes="0">
-                                              <Group type="103" groupAlignment="0" attributes="0">
-                                                  <Component id="jSpinner4" min="-2" pref="100" max="-2" attributes="0"/>
-                                                  <Component id="jLabel20" min="-2" pref="125" max="-2" attributes="0"/>
-                                              </Group>
-                                              <EmptySpace min="-2" pref="40" max="-2" attributes="0"/>
-                                          </Group>
-                                          <Group type="102" alignment="1" attributes="0">
-                                              <Group type="103" groupAlignment="1" attributes="0">
-                                                  <Component id="jTextField12" alignment="1" min="-2" pref="145" max="-2" attributes="0"/>
-                                                  <Component id="jTextField10" max="32767" attributes="0"/>
-                                              </Group>
-                                              <EmptySpace min="-2" pref="20" max="-2" attributes="0"/>
+                                              <EmptySpace min="6" pref="6" max="-2" attributes="0"/>
+                                              <Component id="js_almest" min="-2" pref="100" max="-2" attributes="0"/>
                                           </Group>
                                       </Group>
+                                      <EmptySpace min="-2" pref="40" max="-2" attributes="0"/>
                                   </Group>
                               </Group>
                               <Group type="102" attributes="0">
-                                  <Component id="jLabel16" min="-2" pref="134" max="-2" attributes="0"/>
-                                  <EmptySpace max="32767" attributes="0"/>
+                                  <Group type="103" groupAlignment="0" attributes="0">
+                                      <Component id="jLabel22" min="-2" pref="125" max="-2" attributes="0"/>
+                                      <Component id="jLabel21" min="-2" pref="125" max="-2" attributes="0"/>
+                                      <Component id="js_controlesest1" min="-2" pref="100" max="-2" attributes="0"/>
+                                  </Group>
+                                  <EmptySpace min="-2" pref="40" max="-2" attributes="0"/>
                               </Group>
                           </Group>
                       </Group>
@@ -325,25 +328,26 @@
                                   </Group>
                                   <EmptySpace max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="3" attributes="0">
-                                      <Component id="jTextField9" alignment="3" min="-2" pref="33" max="-2" attributes="0"/>
-                                      <Component id="jTextField12" alignment="3" min="-2" pref="33" max="-2" attributes="0"/>
+                                      <Component id="tf_modest" alignment="3" min="-2" pref="33" max="-2" attributes="0"/>
+                                      <Component id="js_almest" alignment="3" min="-2" pref="36" max="-2" attributes="0"/>
                                   </Group>
                               </Group>
                               <Group type="102" alignment="1" attributes="0">
                                   <Group type="103" groupAlignment="3" attributes="0">
                                       <Component id="jLabel16" alignment="3" min="-2" pref="22" max="-2" attributes="0"/>
                                       <Component id="jLabel17" alignment="3" min="-2" pref="22" max="-2" attributes="0"/>
+                                      <Component id="jLabel22" alignment="3" min="-2" pref="22" max="-2" attributes="0"/>
                                   </Group>
                                   <EmptySpace max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="3" attributes="0">
-                                      <Component id="jTextField8" alignment="3" min="-2" pref="36" max="-2" attributes="0"/>
-                                      <Component id="jSpinner4" alignment="3" min="-2" pref="36" max="-2" attributes="0"/>
-                                      <Component id="jTextField11" alignment="3" min="-2" pref="33" max="-2" attributes="0"/>
+                                      <Component id="tf_fabest" alignment="3" min="-2" pref="36" max="-2" attributes="0"/>
+                                      <Component id="tf_precioest" alignment="3" min="-2" pref="33" max="-2" attributes="0"/>
+                                      <Component id="js_controlesest1" alignment="3" min="-2" pref="36" max="-2" attributes="0"/>
                                   </Group>
                                   <EmptySpace min="-2" pref="29" max="-2" attributes="0"/>
                                   <Component id="jLabel18" min="-2" pref="22" max="-2" attributes="0"/>
                                   <EmptySpace max="-2" attributes="0"/>
-                                  <Component id="jSpinner3" min="-2" pref="32" max="-2" attributes="0"/>
+                                  <Component id="js_aniosest" min="-2" pref="32" max="-2" attributes="0"/>
                               </Group>
                           </Group>
                           <Group type="103" groupAlignment="0" attributes="0">
@@ -351,11 +355,11 @@
                                   <EmptySpace min="-2" pref="25" max="-2" attributes="0"/>
                                   <Component id="jLabel21" min="-2" pref="22" max="-2" attributes="0"/>
                                   <EmptySpace max="-2" attributes="0"/>
-                                  <Component id="jTextField10" min="-2" pref="33" max="-2" attributes="0"/>
+                                  <Component id="tf_conexionest" min="-2" pref="33" max="-2" attributes="0"/>
                               </Group>
                               <Group type="102" alignment="1" attributes="0">
                                   <EmptySpace min="-2" pref="40" max="-2" attributes="0"/>
-                                  <Component id="jButton5" min="-2" pref="46" max="-2" attributes="0"/>
+                                  <Component id="jb_agregarest" min="-2" pref="46" max="-2" attributes="0"/>
                               </Group>
                           </Group>
                           <EmptySpace min="-2" pref="31" max="-2" attributes="0"/>
@@ -364,24 +368,21 @@
                 </DimensionLayout>
               </Layout>
               <SubComponents>
-                <Component class="javax.swing.JTextField" name="jTextField8">
+                <Component class="javax.swing.JTextField" name="tf_fabest">
                   <Events>
-                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jTextField8ActionPerformed"/>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="tf_fabestActionPerformed"/>
                   </Events>
                 </Component>
-                <Component class="javax.swing.JSpinner" name="jSpinner3">
+                <Component class="javax.swing.JSpinner" name="js_aniosest">
                 </Component>
-                <Component class="javax.swing.JTextField" name="jTextField9">
-                  <Properties>
-                    <Property name="text" type="java.lang.String" value="jTextField1"/>
-                  </Properties>
+                <Component class="javax.swing.JTextField" name="tf_modest">
                   <Events>
-                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jTextField9ActionPerformed"/>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="tf_modestActionPerformed"/>
                   </Events>
                 </Component>
-                <Component class="javax.swing.JTextField" name="jTextField10">
+                <Component class="javax.swing.JTextField" name="tf_conexionest">
                   <Events>
-                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jTextField10ActionPerformed"/>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="tf_conexionestActionPerformed"/>
                   </Events>
                 </Component>
                 <Component class="javax.swing.JLabel" name="jLabel15">
@@ -424,16 +425,11 @@
                     <Property name="text" type="java.lang.String" value="Agregar Consola Estacionaria"/>
                   </Properties>
                 </Component>
-                <Component class="javax.swing.JSpinner" name="jSpinner4">
+                <Component class="javax.swing.JSpinner" name="js_almest">
                 </Component>
-                <Component class="javax.swing.JTextField" name="jTextField11">
+                <Component class="javax.swing.JTextField" name="tf_precioest">
                   <Events>
-                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jTextField11ActionPerformed"/>
-                  </Events>
-                </Component>
-                <Component class="javax.swing.JTextField" name="jTextField12">
-                  <Events>
-                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jTextField12ActionPerformed"/>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="tf_precioestActionPerformed"/>
                   </Events>
                 </Component>
                 <Component class="javax.swing.JLabel" name="jLabel20">
@@ -452,7 +448,7 @@
                     <Property name="text" type="java.lang.String" value="Tipo de Conexion:"/>
                   </Properties>
                 </Component>
-                <Component class="javax.swing.JButton" name="jButton5">
+                <Component class="javax.swing.JButton" name="jb_agregarest">
                   <Properties>
                     <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                       <Color blue="ff" green="99" red="cc" type="rgb"/>
@@ -465,6 +461,19 @@
                     </Property>
                     <Property name="text" type="java.lang.String" value="Agregar"/>
                   </Properties>
+                  <Events>
+                    <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="jb_agregarestMouseClicked"/>
+                  </Events>
+                </Component>
+                <Component class="javax.swing.JLabel" name="jLabel22">
+                  <Properties>
+                    <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                      <Font name="Segoe UI Historic" size="12" style="1"/>
+                    </Property>
+                    <Property name="text" type="java.lang.String" value="# Controles:"/>
+                  </Properties>
+                </Component>
+                <Component class="javax.swing.JSpinner" name="js_controlesest1">
                 </Component>
               </SubComponents>
             </Container>
@@ -483,18 +492,18 @@
                           <Group type="103" groupAlignment="1" attributes="0">
                               <Group type="102" attributes="0">
                                   <Group type="103" groupAlignment="0" attributes="0">
-                                      <Component id="jTextField2" min="-2" pref="148" max="-2" attributes="0"/>
+                                      <Component id="tf_fabport" min="-2" pref="148" max="-2" attributes="0"/>
                                       <Component id="jLabel7" min="-2" pref="134" max="-2" attributes="0"/>
                                       <Component id="jLabel8" min="-2" pref="134" max="-2" attributes="0"/>
-                                      <Component id="jSpinner2" min="-2" pref="105" max="-2" attributes="0"/>
+                                      <Component id="js_anospor" min="-2" pref="105" max="-2" attributes="0"/>
                                   </Group>
                                   <EmptySpace min="-2" pref="41" max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="0" attributes="0">
                                       <Group type="102" attributes="0">
                                           <Group type="103" groupAlignment="1" attributes="0">
                                               <Component id="jLabel5" alignment="0" max="32767" attributes="0"/>
-                                              <Component id="jTextField3" alignment="0" max="32767" attributes="0"/>
-                                              <Component id="jTextField4" max="32767" attributes="0"/>
+                                              <Component id="tf_modelopor" alignment="0" max="32767" attributes="0"/>
+                                              <Component id="tf_preciopor" max="32767" attributes="0"/>
                                           </Group>
                                           <EmptySpace min="-2" pref="32" max="-2" attributes="0"/>
                                       </Group>
@@ -510,15 +519,15 @@
                                           <Component id="jRadioButton2" min="-2" pref="81" max="-2" attributes="0"/>
                                       </Group>
                                       <Component id="jLabel6" min="-2" pref="134" max="-2" attributes="0"/>
-                                      <Component id="jComboBox1" alignment="0" min="-2" pref="135" max="-2" attributes="0"/>
+                                      <Component id="cb_tampor" alignment="0" min="-2" pref="135" max="-2" attributes="0"/>
                                       <Component id="jLabel12" alignment="0" min="-2" pref="134" max="-2" attributes="0"/>
                                   </Group>
                               </Group>
                               <Group type="102" attributes="0">
-                                  <Component id="jButton6" min="-2" pref="190" max="-2" attributes="0"/>
+                                  <Component id="jb_agregarpor" min="-2" pref="190" max="-2" attributes="0"/>
                                   <EmptySpace max="32767" attributes="0"/>
                                   <Group type="103" groupAlignment="0" attributes="0">
-                                      <Component id="jSpinner1" min="-2" pref="105" max="-2" attributes="0"/>
+                                      <Component id="js_batpor" min="-2" pref="105" max="-2" attributes="0"/>
                                       <Component id="jLabel11" min="-2" pref="174" max="-2" attributes="0"/>
                                   </Group>
                               </Group>
@@ -546,8 +555,8 @@
                                   </Group>
                                   <EmptySpace max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="3" attributes="0">
-                                      <Component id="jTextField3" alignment="3" min="-2" pref="33" max="-2" attributes="0"/>
-                                      <Component id="jComboBox1" alignment="3" min="-2" pref="34" max="-2" attributes="0"/>
+                                      <Component id="tf_modelopor" alignment="3" min="-2" pref="33" max="-2" attributes="0"/>
+                                      <Component id="cb_tampor" alignment="3" min="-2" pref="34" max="-2" attributes="0"/>
                                   </Group>
                                   <EmptySpace min="-2" pref="26" max="-2" attributes="0"/>
                               </Group>
@@ -559,13 +568,13 @@
                                   </Group>
                                   <EmptySpace max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="3" attributes="0">
-                                      <Component id="jTextField4" alignment="3" min="-2" pref="33" max="-2" attributes="0"/>
-                                      <Component id="jTextField2" alignment="3" min="-2" pref="36" max="-2" attributes="0"/>
+                                      <Component id="tf_preciopor" alignment="3" min="-2" pref="33" max="-2" attributes="0"/>
+                                      <Component id="tf_fabport" alignment="3" min="-2" pref="36" max="-2" attributes="0"/>
                                   </Group>
                                   <EmptySpace min="-2" pref="29" max="-2" attributes="0"/>
                                   <Component id="jLabel8" min="-2" pref="22" max="-2" attributes="0"/>
                                   <EmptySpace type="separate" max="-2" attributes="0"/>
-                                  <Component id="jSpinner2" min="-2" pref="32" max="-2" attributes="0"/>
+                                  <Component id="js_anospor" min="-2" pref="32" max="-2" attributes="0"/>
                                   <EmptySpace min="-2" pref="14" max="-2" attributes="0"/>
                               </Group>
                           </Group>
@@ -573,9 +582,9 @@
                               <Group type="102" attributes="0">
                                   <Component id="jLabel11" min="-2" pref="22" max="-2" attributes="0"/>
                                   <EmptySpace max="-2" attributes="0"/>
-                                  <Component id="jSpinner1" min="-2" pref="32" max="-2" attributes="0"/>
+                                  <Component id="js_batpor" min="-2" pref="32" max="-2" attributes="0"/>
                               </Group>
-                              <Component id="jButton6" min="-2" pref="46" max="-2" attributes="0"/>
+                              <Component id="jb_agregarpor" min="-2" pref="46" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace min="-2" pref="31" max="-2" attributes="0"/>
                       </Group>
@@ -583,21 +592,21 @@
                 </DimensionLayout>
               </Layout>
               <SubComponents>
-                <Component class="javax.swing.JTextField" name="jTextField2">
+                <Component class="javax.swing.JTextField" name="tf_fabport">
                   <Events>
-                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jTextField2ActionPerformed"/>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="tf_fabportActionPerformed"/>
                   </Events>
                 </Component>
-                <Component class="javax.swing.JSpinner" name="jSpinner1">
+                <Component class="javax.swing.JSpinner" name="js_batpor">
                 </Component>
-                <Component class="javax.swing.JTextField" name="jTextField3">
+                <Component class="javax.swing.JTextField" name="tf_modelopor">
                   <Events>
-                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jTextField3ActionPerformed"/>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="tf_modeloporActionPerformed"/>
                   </Events>
                 </Component>
-                <Component class="javax.swing.JTextField" name="jTextField4">
+                <Component class="javax.swing.JTextField" name="tf_preciopor">
                   <Events>
-                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jTextField4ActionPerformed"/>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="tf_precioporActionPerformed"/>
                   </Events>
                 </Component>
                 <Component class="javax.swing.JLabel" name="jLabel5">
@@ -664,7 +673,7 @@
                     <Property name="text" type="java.lang.String" value="Precio:"/>
                   </Properties>
                 </Component>
-                <Component class="javax.swing.JComboBox" name="jComboBox1">
+                <Component class="javax.swing.JComboBox" name="cb_tampor">
                   <Properties>
                     <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
                       <StringArray count="3">
@@ -694,9 +703,9 @@
                     <Property name="text" type="java.lang.String" value="Tama&#xf1;o de Pantalla:"/>
                   </Properties>
                 </Component>
-                <Component class="javax.swing.JSpinner" name="jSpinner2">
+                <Component class="javax.swing.JSpinner" name="js_anospor">
                 </Component>
-                <Component class="javax.swing.JButton" name="jButton6">
+                <Component class="javax.swing.JButton" name="jb_agregarpor">
                   <Properties>
                     <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                       <Color blue="ff" green="99" red="cc" type="rgb"/>
@@ -710,11 +719,47 @@
                     <Property name="text" type="java.lang.String" value="Agregar"/>
                   </Properties>
                   <Events>
-                    <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="jButton6MouseClicked"/>
+                    <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="jb_agregarporMouseClicked"/>
                   </Events>
                 </Component>
               </SubComponents>
             </Container>
+          </SubComponents>
+        </Container>
+        <Container class="javax.swing.JPanel" name="jPanel4">
+          <Constraints>
+            <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
+              <AbsoluteConstraints x="230" y="70" width="670" height="460"/>
+            </Constraint>
+          </Constraints>
+
+          <Layout>
+            <DimensionLayout dim="0">
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Group type="102" alignment="0" attributes="0">
+                      <EmptySpace min="-2" pref="128" max="-2" attributes="0"/>
+                      <Component id="jLabel13" min="-2" pref="399" max="-2" attributes="0"/>
+                      <EmptySpace pref="153" max="32767" attributes="0"/>
+                  </Group>
+              </Group>
+            </DimensionLayout>
+            <DimensionLayout dim="1">
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Group type="102" alignment="0" attributes="0">
+                      <EmptySpace min="-2" pref="14" max="-2" attributes="0"/>
+                      <Component id="jLabel13" min="-2" pref="37" max="-2" attributes="0"/>
+                      <EmptySpace pref="409" max="32767" attributes="0"/>
+                  </Group>
+              </Group>
+            </DimensionLayout>
+          </Layout>
+          <SubComponents>
+            <Component class="javax.swing.JLabel" name="jLabel13">
+              <Properties>
+                <Property name="horizontalAlignment" type="int" value="0"/>
+                <Property name="text" type="java.lang.String" value="Lista de Consolas"/>
+              </Properties>
+            </Component>
           </SubComponents>
         </Container>
         <Component class="javax.swing.JButton" name="jButton7">

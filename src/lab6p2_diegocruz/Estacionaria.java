@@ -10,8 +10,8 @@ package lab6p2_diegocruz;
  */
 public class Estacionaria extends Consola{
     
-    int controles, storage;
-    String tipocon;
+    private int controles, storage;
+    private String tipocon;
 
     public Estacionaria() {
     }
@@ -19,6 +19,16 @@ public class Estacionaria extends Consola{
     public Estacionaria(String id, String fab, String modelo, int aniosuso, double precio) {
         super(id, fab, modelo, aniosuso, precio);
     }
+
+    public Estacionaria(int controles, int storage, String tipocon, String id, String fab, String modelo, int aniosuso, double precio) {
+        super(id, fab, modelo, aniosuso, precio);
+        this.controles = controles;
+        this.storage = storage;
+        this.tipocon = tipocon;
+    }
+    
+    
+    
 
     public int getControles() {
         return controles;
