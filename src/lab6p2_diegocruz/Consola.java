@@ -17,6 +17,11 @@ public class Consola {
     private double precio;
     private ArrayList<Juego> juegos = new ArrayList();
 
+    public Consola() {
+    }
+    
+    
+
     public Consola(String id, String fab, String modelo, int aniosuso, double precio) {
         this.id = id;
         this.fab = fab;

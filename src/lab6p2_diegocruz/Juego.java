@@ -18,6 +18,11 @@ public class Juego {
     boolean nuevo, rentable, agregado;
     int cant;
 
+    public Juego() {
+    }
+    
+    
+
     public Juego(String nom, String desc, Date fechalan, double precio, boolean nuevo, boolean rentable, boolean agregado, int cant) {
         this.nom = nom;
         this.desc = desc;
