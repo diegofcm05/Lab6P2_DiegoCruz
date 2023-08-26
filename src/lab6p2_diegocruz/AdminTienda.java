@@ -183,7 +183,7 @@ public class AdminTienda extends javax.swing.JFrame {
         tf_precioest1 = new javax.swing.JTextField();
         jLabel39 = new javax.swing.JLabel();
         jLabel40 = new javax.swing.JLabel();
-        jb_agregarest1 = new javax.swing.JButton();
+        jb_modest = new javax.swing.JButton();
         jLabel41 = new javax.swing.JLabel();
         js_controlesest2 = new javax.swing.JSpinner();
         jp_portatil1 = new javax.swing.JPanel();
@@ -475,6 +475,11 @@ public class AdminTienda extends javax.swing.JFrame {
         jPopupMenu1.add(Modificar);
 
         Eliminar.setText("Eliminar Juego");
+        Eliminar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                EliminarActionPerformed(evt);
+            }
+        });
         jPopupMenu1.add(Eliminar);
 
         jPanel4.setBackground(new java.awt.Color(255, 102, 102));
@@ -679,9 +684,19 @@ public class AdminTienda extends javax.swing.JFrame {
         );
 
         ModificarCons.setText("Modificar Consola");
+        ModificarCons.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ModificarConsActionPerformed(evt);
+            }
+        });
         jPopupMenu2.add(ModificarCons);
 
         EliminarCons.setText("Eliminar Consola");
+        EliminarCons.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                EliminarConsActionPerformed(evt);
+            }
+        });
         jPopupMenu2.add(EliminarCons);
 
         AddJuegosCon.setText("Lista de Juegos");
@@ -1273,13 +1288,13 @@ public class AdminTienda extends javax.swing.JFrame {
         jLabel40.setFont(new java.awt.Font("Segoe UI Historic", 1, 12)); // NOI18N
         jLabel40.setText("Tipo de Conexion:");
 
-        jb_agregarest1.setBackground(new java.awt.Color(204, 153, 255));
-        jb_agregarest1.setFont(new java.awt.Font("Segoe UI Historic", 1, 14)); // NOI18N
-        jb_agregarest1.setForeground(new java.awt.Color(0, 0, 0));
-        jb_agregarest1.setText("Modificar");
-        jb_agregarest1.addMouseListener(new java.awt.event.MouseAdapter() {
+        jb_modest.setBackground(new java.awt.Color(204, 153, 255));
+        jb_modest.setFont(new java.awt.Font("Segoe UI Historic", 1, 14)); // NOI18N
+        jb_modest.setForeground(new java.awt.Color(0, 0, 0));
+        jb_modest.setText("Modificar");
+        jb_modest.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jb_agregarest1MouseClicked(evt);
+                jb_modestMouseClicked(evt);
             }
         });
 
@@ -1297,7 +1312,7 @@ public class AdminTienda extends javax.swing.JFrame {
                     .addComponent(jLabel36, javax.swing.GroupLayout.PREFERRED_SIZE, 134, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(js_aniosest1, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel37, javax.swing.GroupLayout.PREFERRED_SIZE, 134, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jb_agregarest1, javax.swing.GroupLayout.PREFERRED_SIZE, 190, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jb_modest, javax.swing.GroupLayout.PREFERRED_SIZE, 190, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jp_estacionaria1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jp_estacionaria1Layout.createSequentialGroup()
@@ -1370,7 +1385,7 @@ public class AdminTienda extends javax.swing.JFrame {
                         .addComponent(tf_conexionest1, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jp_estacionaria1Layout.createSequentialGroup()
                         .addGap(40, 40, 40)
-                        .addComponent(jb_agregarest1, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(jb_modest, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(31, 31, 31))
         );
 
@@ -1831,9 +1846,37 @@ public class AdminTienda extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_tf_precioest1ActionPerformed
 
-    private void jb_agregarest1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jb_agregarest1MouseClicked
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jb_agregarest1MouseClicked
+    private void jb_modestMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jb_modestMouseClicked
+        String id, fab, mod, con;
+        double prec;
+        int alm, anuso, controles;
+        
+        try {
+            id = genid();
+            fab = tf_fabest1.getText();
+            mod= tf_modest1.getText();
+            alm = ((Integer)js_almest1.getValue());
+            anuso = ((Integer)js_aniosest1.getValue());
+            controles = ((Integer)js_controlesest2.getValue());
+            prec = Double.parseDouble(tf_precioest1.getText());
+            con = tf_conexionest1.getText();
+            fab = tf_fabest1.getText();
+            Estacionaria ya = new Estacionaria (controles,alm,con,id,fab,mod, anuso,prec);
+            int ind = jt_consolas.getSelectedRow();
+            consolas.remove(ind);
+            consolas.add(ind, ya);
+            tf_conexionest1.setText("");
+            tf_fabest1.setText("");
+            tf_modest1.setText("");
+            tf_precioest1.setText("");
+            js_almest1.setValue(0);
+            js_aniosest1.setValue(0);
+            js_controlesest2.setValue(0); 
+            JOptionPane.showMessageDialog(jp_modificar, "La consola ha sido modificada exitosamente!");
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(jp_modificar, "Ha ocurrido un error.\nIntente agregar de nuevo.");
+        }
+    }//GEN-LAST:event_jb_modestMouseClicked
 
     private void tf_fabport1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tf_fabport1ActionPerformed
         // TODO add your handling code here:
@@ -1900,6 +1943,36 @@ public class AdminTienda extends javax.swing.JFrame {
         jd_addjuego.setLocationRelativeTo(this);
         jd_addjuego.setVisible(true);
     }//GEN-LAST:event_jButton1MouseClicked
+
+    private void EliminarConsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EliminarConsActionPerformed
+        if (jt_consolas.getSelectedRow()>=0){
+            consolas.remove(jt_consolas.getSelectedRow());
+            jt_consolas.remove(jt_consolas.getSelectedRow());
+        }
+        
+    }//GEN-LAST:event_EliminarConsActionPerformed
+
+    private void EliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EliminarActionPerformed
+        if (lt_juego.getSelectedIndex()>=0){
+            consolas.get(jt_consolas.getSelectedRow()).getJuegos().remove(lt_juego.getSelectedIndex());
+            lt_juego.remove(lt_juego.getSelectedIndex());
+        }
+    }//GEN-LAST:event_EliminarActionPerformed
+
+    private void ModificarConsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ModificarConsActionPerformed
+        if (consolas.get(jt_consolas.getSelectedRow() ) instanceof Portatil){
+            jp_listarcons.setVisible(false);
+            jp_modificar.setVisible(true);
+            jp_portatil1.setVisible(true);
+            
+            
+        }
+        if (consolas.get(jt_consolas.getSelectedRow() ) instanceof Estacionaria){
+            jp_listarcons.setVisible(false);
+            jp_modificar.setVisible(true);
+            jp_estacionaria1.setVisible(true);
+        }
+    }//GEN-LAST:event_ModificarConsActionPerformed
 
     /**
      * @param args the command line arguments
@@ -2080,9 +2153,9 @@ public class AdminTienda extends javax.swing.JFrame {
     private javax.swing.JButton jb_addjuego1;
     private javax.swing.JButton jb_addjuego2;
     private javax.swing.JButton jb_agregarest;
-    private javax.swing.JButton jb_agregarest1;
     private javax.swing.JButton jb_agregarpor;
     private javax.swing.JButton jb_agregarpor1;
+    private javax.swing.JButton jb_modest;
     private javax.swing.JDialog jd_addjuego;
     private javax.swing.JDialog jd_listjuegos;
     private javax.swing.JDialog jd_modjuego;

@@ -100,7 +100,7 @@ public class Juego {
 
     @Override
     public String toString() {
-        return "Juego{" + "nom=" + nom + ", desc=" + desc + ", fechalan=" + fechalan + ", precio=" + precio + ", nuevo=" + nuevo + ", rentable=" + rentable + ", agregado=" + agregado + ", cant=" + cant + '}';
+        return "Juego{" + "nom=" + nom + ", fechalan=" + fechalan + ", precio=" + precio + ", nuevo=" + nuevo + ", rentable=" + rentable + ", agregado=" + agregado + ", cant=" + cant + '}';
     }
     
     
