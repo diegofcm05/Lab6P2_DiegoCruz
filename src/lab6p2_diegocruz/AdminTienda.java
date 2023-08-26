@@ -27,7 +27,9 @@ public class AdminTienda extends javax.swing.JFrame {
      * Creates new form AdminTienda
      */
     public AdminTienda() {
+        
         initComponents();
+        JOptionPane.showMessageDialog(this,"No pude agregar todos los joptionpanes, pero las cosas si se hacen.");
         jp_agregar.setVisible(false);
         jp_portatil.setVisible(false);
         jp_estacionaria.setVisible(false);
@@ -1985,6 +1987,8 @@ public class AdminTienda extends javax.swing.JFrame {
         else if (jRadioButton8.isSelected()){
             addon = false;
         }
+        int sa = lt_juego.getSelectedIndex();
+        consolas.get(jt_consolas.getSelectedRow()).getJuegos().remove(sa); 
         Juego ab = new Juego(nom, desc, k, prec, nuev, ren, addon, cant);
         consolas.get(jt_consolas.getSelectedRow()).getJuegos().add(ab); 
     }//GEN-LAST:event_jb_addjuego2MouseClicked
