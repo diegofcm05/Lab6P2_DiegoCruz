@@ -7,6 +7,7 @@ package lab6p2_diegocruz;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.Random;
+import javax.swing.DefaultListModel;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 import javax.swing.table.TableModel;
@@ -31,6 +32,9 @@ public class AdminTienda extends javax.swing.JFrame {
         jp_portatil.setVisible(false);
         jp_estacionaria.setVisible(false);
         jp_listarcons.setVisible(false);
+        jp_estacionaria1.setVisible(false);
+        jp_portatil1.setVisible(false);
+        jp_modificar.setVisible(false);
     }
 
     /**
@@ -50,7 +54,7 @@ public class AdminTienda extends javax.swing.JFrame {
         jPanel1 = new javax.swing.JPanel();
         jButton1 = new javax.swing.JButton();
         jScrollPane2 = new javax.swing.JScrollPane();
-        jList1 = new javax.swing.JList<>();
+        lt_juego = new javax.swing.JList<>();
         jLabel14 = new javax.swing.JLabel();
         jd_addjuego = new javax.swing.JDialog();
         jPanel2 = new javax.swing.JPanel();
@@ -80,6 +84,33 @@ public class AdminTienda extends javax.swing.JFrame {
         Modificar = new javax.swing.JMenuItem();
         Eliminar = new javax.swing.JMenuItem();
         jd_modjuego = new javax.swing.JDialog();
+        jPanel4 = new javax.swing.JPanel();
+        jLabel59 = new javax.swing.JLabel();
+        tf_nomjueg2 = new javax.swing.JTextField();
+        tf_precjug2 = new javax.swing.JTextField();
+        js_cantjueg2 = new javax.swing.JSpinner();
+        jdc_fechajueg2 = new com.toedter.calendar.JDateChooser();
+        jLabel60 = new javax.swing.JLabel();
+        jLabel61 = new javax.swing.JLabel();
+        jLabel62 = new javax.swing.JLabel();
+        jLabel63 = new javax.swing.JLabel();
+        jLabel64 = new javax.swing.JLabel();
+        jLabel65 = new javax.swing.JLabel();
+        jScrollPane5 = new javax.swing.JScrollPane();
+        ta_desc2 = new javax.swing.JTextArea();
+        jLabel66 = new javax.swing.JLabel();
+        jLabel67 = new javax.swing.JLabel();
+        jRadioButton17 = new javax.swing.JRadioButton();
+        jRadioButton18 = new javax.swing.JRadioButton();
+        jRadioButton19 = new javax.swing.JRadioButton();
+        jRadioButton20 = new javax.swing.JRadioButton();
+        jRadioButton21 = new javax.swing.JRadioButton();
+        jRadioButton22 = new javax.swing.JRadioButton();
+        jb_addjuego2 = new javax.swing.JButton();
+        jPopupMenu2 = new javax.swing.JPopupMenu();
+        ModificarCons = new javax.swing.JMenuItem();
+        EliminarCons = new javax.swing.JMenuItem();
+        AddJuegosCon = new javax.swing.JMenuItem();
         jp_main = new javax.swing.JPanel();
         jButton2 = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
@@ -181,18 +212,23 @@ public class AdminTienda extends javax.swing.JFrame {
         jButton1.setFont(new java.awt.Font("Segoe UI Historic", 1, 14)); // NOI18N
         jButton1.setForeground(new java.awt.Color(255, 255, 255));
         jButton1.setText("Agregar Juego");
+        jButton1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButton1MouseClicked(evt);
+            }
+        });
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton1ActionPerformed(evt);
             }
         });
 
-        jList1.setModel(new javax.swing.AbstractListModel<String>() {
-            String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
-            public int getSize() { return strings.length; }
-            public String getElementAt(int i) { return strings[i]; }
+        lt_juego.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                lt_juegoMouseClicked(evt);
+            }
         });
-        jScrollPane2.setViewportView(jList1);
+        jScrollPane2.setViewportView(lt_juego);
 
         jLabel14.setFont(new java.awt.Font("Segoe UI Historic", 1, 14)); // NOI18N
         jLabel14.setForeground(new java.awt.Color(255, 255, 255));
@@ -441,16 +477,220 @@ public class AdminTienda extends javax.swing.JFrame {
         Eliminar.setText("Eliminar Juego");
         jPopupMenu1.add(Eliminar);
 
+        jPanel4.setBackground(new java.awt.Color(255, 102, 102));
+        jPanel4.setForeground(new java.awt.Color(255, 153, 153));
+
+        jLabel59.setFont(new java.awt.Font("Segoe UI Historic", 1, 18)); // NOI18N
+        jLabel59.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel59.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel59.setText("Modificar Juego");
+
+        jLabel60.setFont(new java.awt.Font("Segoe UI Historic", 1, 12)); // NOI18N
+        jLabel60.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel60.setText("Descripcion");
+
+        jLabel61.setFont(new java.awt.Font("Segoe UI Historic", 1, 12)); // NOI18N
+        jLabel61.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel61.setText("Cantidad");
+
+        jLabel62.setFont(new java.awt.Font("Segoe UI Historic", 1, 12)); // NOI18N
+        jLabel62.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel62.setText("Nombre");
+
+        jLabel63.setFont(new java.awt.Font("Segoe UI Historic", 1, 12)); // NOI18N
+        jLabel63.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel63.setText("Precio");
+
+        jLabel64.setFont(new java.awt.Font("Segoe UI Historic", 1, 12)); // NOI18N
+        jLabel64.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel64.setText("Tiene Add-Ons?");
+
+        jLabel65.setFont(new java.awt.Font("Segoe UI Historic", 1, 12)); // NOI18N
+        jLabel65.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel65.setText("Fecha Lanzamiento");
+
+        ta_desc2.setColumns(20);
+        ta_desc2.setRows(5);
+        jScrollPane5.setViewportView(ta_desc2);
+
+        jLabel66.setFont(new java.awt.Font("Segoe UI Historic", 1, 12)); // NOI18N
+        jLabel66.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel66.setText("Es nuevo?");
+
+        jLabel67.setFont(new java.awt.Font("Segoe UI Historic", 1, 12)); // NOI18N
+        jLabel67.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel67.setText("Es rentable?");
+
+        buttonGroup2.add(jRadioButton17);
+        jRadioButton17.setFont(new java.awt.Font("Segoe UI Historic", 1, 12)); // NOI18N
+        jRadioButton17.setForeground(new java.awt.Color(255, 255, 255));
+        jRadioButton17.setText("Si");
+
+        buttonGroup2.add(jRadioButton18);
+        jRadioButton18.setFont(new java.awt.Font("Segoe UI Historic", 1, 12)); // NOI18N
+        jRadioButton18.setForeground(new java.awt.Color(255, 255, 255));
+        jRadioButton18.setText("No");
+
+        buttonGroup3.add(jRadioButton19);
+        jRadioButton19.setFont(new java.awt.Font("Segoe UI Historic", 1, 12)); // NOI18N
+        jRadioButton19.setForeground(new java.awt.Color(255, 255, 255));
+        jRadioButton19.setText("Si");
+
+        buttonGroup3.add(jRadioButton20);
+        jRadioButton20.setFont(new java.awt.Font("Segoe UI Historic", 1, 12)); // NOI18N
+        jRadioButton20.setForeground(new java.awt.Color(255, 255, 255));
+        jRadioButton20.setText("No");
+
+        buttonGroup4.add(jRadioButton21);
+        jRadioButton21.setFont(new java.awt.Font("Segoe UI Historic", 1, 12)); // NOI18N
+        jRadioButton21.setForeground(new java.awt.Color(255, 255, 255));
+        jRadioButton21.setText("Si");
+
+        buttonGroup4.add(jRadioButton22);
+        jRadioButton22.setFont(new java.awt.Font("Segoe UI Historic", 1, 12)); // NOI18N
+        jRadioButton22.setForeground(new java.awt.Color(255, 255, 255));
+        jRadioButton22.setText("No");
+
+        jb_addjuego2.setBackground(new java.awt.Color(255, 153, 51));
+        jb_addjuego2.setFont(new java.awt.Font("Segoe UI Historic", 1, 12)); // NOI18N
+        jb_addjuego2.setForeground(new java.awt.Color(255, 255, 255));
+        jb_addjuego2.setText("Modificar Juego");
+        jb_addjuego2.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jb_addjuego2MouseClicked(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
+        jPanel4.setLayout(jPanel4Layout);
+        jPanel4Layout.setHorizontalGroup(
+            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel4Layout.createSequentialGroup()
+                .addGap(30, 30, 30)
+                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                        .addComponent(js_cantjueg2, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(tf_precjug2, javax.swing.GroupLayout.DEFAULT_SIZE, 133, Short.MAX_VALUE)
+                        .addComponent(tf_nomjueg2))
+                    .addComponent(jLabel62, javax.swing.GroupLayout.PREFERRED_SIZE, 103, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel60, javax.swing.GroupLayout.PREFERRED_SIZE, 103, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jScrollPane5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel63, javax.swing.GroupLayout.PREFERRED_SIZE, 103, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel61, javax.swing.GroupLayout.PREFERRED_SIZE, 103, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel4Layout.createSequentialGroup()
+                        .addGap(38, 38, 38)
+                        .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(jLabel65, javax.swing.GroupLayout.PREFERRED_SIZE, 103, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(jdc_fechajueg2, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(jLabel66, javax.swing.GroupLayout.PREFERRED_SIZE, 103, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGroup(jPanel4Layout.createSequentialGroup()
+                                    .addComponent(jRadioButton17, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addGap(18, 18, 18)
+                                    .addComponent(jRadioButton18, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGroup(jPanel4Layout.createSequentialGroup()
+                                    .addComponent(jRadioButton19, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addGap(18, 18, 18)
+                                    .addComponent(jRadioButton20, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(jLabel67, javax.swing.GroupLayout.PREFERRED_SIZE, 103, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(jPanel4Layout.createSequentialGroup()
+                                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addComponent(jLabel64, javax.swing.GroupLayout.PREFERRED_SIZE, 97, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jRadioButton21, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGap(18, 18, 18)
+                                .addComponent(jRadioButton22, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 130, Short.MAX_VALUE)
+                        .addComponent(jb_addjuego2, javax.swing.GroupLayout.PREFERRED_SIZE, 184, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(68, Short.MAX_VALUE))
+            .addGroup(jPanel4Layout.createSequentialGroup()
+                .addGap(216, 216, 216)
+                .addComponent(jLabel59, javax.swing.GroupLayout.PREFERRED_SIZE, 143, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        jPanel4Layout.setVerticalGroup(
+            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel4Layout.createSequentialGroup()
+                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel4Layout.createSequentialGroup()
+                        .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addGroup(jPanel4Layout.createSequentialGroup()
+                                .addGap(60, 60, 60)
+                                .addComponent(jLabel62, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createSequentialGroup()
+                                .addContainerGap()
+                                .addComponent(jLabel59, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(jLabel65, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(tf_nomjueg2, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jdc_fechajueg2, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(28, 28, 28)
+                        .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel60, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel66, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(jScrollPane5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(jPanel4Layout.createSequentialGroup()
+                                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                    .addComponent(jRadioButton17)
+                                    .addComponent(jRadioButton18))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(jLabel67, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                    .addComponent(jRadioButton19)
+                                    .addComponent(jRadioButton20))))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jLabel63, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(tf_precjug2, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(14, 14, 14))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createSequentialGroup()
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jLabel64, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jRadioButton21)
+                            .addComponent(jRadioButton22))
+                        .addGap(5, 5, 5)))
+                .addComponent(jLabel61, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jb_addjuego2, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(js_cantjueg2, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(101, 101, 101))
+        );
+
         javax.swing.GroupLayout jd_modjuegoLayout = new javax.swing.GroupLayout(jd_modjuego.getContentPane());
         jd_modjuego.getContentPane().setLayout(jd_modjuegoLayout);
         jd_modjuegoLayout.setHorizontalGroup(
             jd_modjuegoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
+            .addGroup(jd_modjuegoLayout.createSequentialGroup()
+                .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
         jd_modjuegoLayout.setVerticalGroup(
             jd_modjuegoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
+            .addComponent(jPanel4, javax.swing.GroupLayout.DEFAULT_SIZE, 500, Short.MAX_VALUE)
         );
+
+        ModificarCons.setText("Modificar Consola");
+        jPopupMenu2.add(ModificarCons);
+
+        EliminarCons.setText("Eliminar Consola");
+        jPopupMenu2.add(EliminarCons);
+
+        AddJuegosCon.setText("Lista de Juegos");
+        AddJuegosCon.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                AddJuegosConActionPerformed(evt);
+            }
+        });
+        jPopupMenu2.add(AddJuegosCon);
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -891,6 +1131,16 @@ public class AdminTienda extends javax.swing.JFrame {
                 return canEdit [columnIndex];
             }
         });
+        jt_consolas.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jt_consolasMouseClicked(evt);
+            }
+        });
+        jt_consolas.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                jt_consolasKeyPressed(evt);
+            }
+        });
         jScrollPane1.setViewportView(jt_consolas);
 
         javax.swing.GroupLayout jp_listarconsLayout = new javax.swing.GroupLayout(jp_listarcons);
@@ -1289,9 +1539,9 @@ public class AdminTienda extends javax.swing.JFrame {
                     .addComponent(jp_portatil1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(jp_modificarLayout.createSequentialGroup()
                         .addComponent(jLabel33, javax.swing.GroupLayout.PREFERRED_SIZE, 204, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(66, 66, 66)
+                        .addGap(67, 67, 67)
                         .addComponent(jButton5, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(28, 28, 28)
+                        .addGap(27, 27, 27)
                         .addComponent(jButton6)))
                 .addContainerGap(11, Short.MAX_VALUE))
             .addGroup(jp_modificarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1601,6 +1851,56 @@ public class AdminTienda extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jb_agregarpor1MouseClicked
 
+    private void jb_addjuego2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jb_addjuego2MouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jb_addjuego2MouseClicked
+
+    private void jt_consolasKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jt_consolasKeyPressed
+
+    }//GEN-LAST:event_jt_consolasKeyPressed
+
+    private void jt_consolasMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jt_consolasMouseClicked
+        if (jt_consolas.getSelectedRow() >= 0) {
+            if (evt.isMetaDown()) {
+                jPopupMenu2.show(evt.getComponent(),
+                        evt.getX(), evt.getY());
+
+            }
+        }
+    }//GEN-LAST:event_jt_consolasMouseClicked
+
+    private void AddJuegosConActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AddJuegosConActionPerformed
+        con_seleccionada = consolas.get(jt_consolas.getSelectedRow());
+        jd_listjuegos.pack();
+        jd_listjuegos.setModal(true);
+        jd_listjuegos.setLocationRelativeTo(this);
+        jd_listjuegos.setVisible(true);
+        DefaultListModel mod = new DefaultListModel();
+        ArrayList<Juego> d = consolas.get(jt_consolas.getSelectedRow()).getJuegos();
+        for (Juego juego : d) {
+            mod.addElement(juego);
+            
+        }
+        lt_juego.setModel(mod);
+    }//GEN-LAST:event_AddJuegosConActionPerformed
+
+    private void lt_juegoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lt_juegoMouseClicked
+        if (lt_juego.getSelectedIndex() >= 0) {
+            if (evt.isMetaDown()) {
+                jPopupMenu1.show(evt.getComponent(),
+                        evt.getX(), evt.getY());
+
+            }
+        }
+    }//GEN-LAST:event_lt_juegoMouseClicked
+
+    private void jButton1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton1MouseClicked
+        jd_addjuego.pack();
+        jd_addjuego.setModal(true);
+        jd_addjuego.setLocationRelativeTo(this);
+        jd_addjuego.setVisible(true);
+    }//GEN-LAST:event_jButton1MouseClicked
+
     /**
      * @param args the command line arguments
      */
@@ -1654,8 +1954,11 @@ public class AdminTienda extends javax.swing.JFrame {
     Consola con_seleccionada;
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JMenuItem AddJuegosCon;
     private javax.swing.JMenuItem Eliminar;
+    private javax.swing.JMenuItem EliminarCons;
     private javax.swing.JMenuItem Modificar;
+    private javax.swing.JMenuItem ModificarCons;
     private javax.swing.ButtonGroup buttonGroup1;
     private javax.swing.ButtonGroup buttonGroup2;
     private javax.swing.ButtonGroup buttonGroup3;
@@ -1714,17 +2017,49 @@ public class AdminTienda extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel48;
     private javax.swing.JLabel jLabel49;
     private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel50;
+    private javax.swing.JLabel jLabel51;
+    private javax.swing.JLabel jLabel52;
+    private javax.swing.JLabel jLabel53;
+    private javax.swing.JLabel jLabel54;
+    private javax.swing.JLabel jLabel55;
+    private javax.swing.JLabel jLabel56;
+    private javax.swing.JLabel jLabel57;
+    private javax.swing.JLabel jLabel58;
+    private javax.swing.JLabel jLabel59;
     private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel60;
+    private javax.swing.JLabel jLabel61;
+    private javax.swing.JLabel jLabel62;
+    private javax.swing.JLabel jLabel63;
+    private javax.swing.JLabel jLabel64;
+    private javax.swing.JLabel jLabel65;
+    private javax.swing.JLabel jLabel66;
+    private javax.swing.JLabel jLabel67;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
-    private javax.swing.JList<String> jList1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
+    private javax.swing.JPanel jPanel3;
+    private javax.swing.JPanel jPanel4;
     private javax.swing.JPopupMenu jPopupMenu1;
+    private javax.swing.JPopupMenu jPopupMenu2;
     private javax.swing.JRadioButton jRadioButton1;
     private javax.swing.JRadioButton jRadioButton10;
+    private javax.swing.JRadioButton jRadioButton11;
+    private javax.swing.JRadioButton jRadioButton12;
+    private javax.swing.JRadioButton jRadioButton13;
+    private javax.swing.JRadioButton jRadioButton14;
+    private javax.swing.JRadioButton jRadioButton15;
+    private javax.swing.JRadioButton jRadioButton16;
+    private javax.swing.JRadioButton jRadioButton17;
+    private javax.swing.JRadioButton jRadioButton18;
+    private javax.swing.JRadioButton jRadioButton19;
     private javax.swing.JRadioButton jRadioButton2;
+    private javax.swing.JRadioButton jRadioButton20;
+    private javax.swing.JRadioButton jRadioButton21;
+    private javax.swing.JRadioButton jRadioButton22;
     private javax.swing.JRadioButton jRadioButton3;
     private javax.swing.JRadioButton jRadioButton4;
     private javax.swing.JRadioButton jRadioButton5;
@@ -1735,11 +2070,15 @@ public class AdminTienda extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
+    private javax.swing.JScrollPane jScrollPane4;
+    private javax.swing.JScrollPane jScrollPane5;
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JSeparator jSeparator2;
     private javax.swing.JSeparator jSeparator3;
     private javax.swing.JSeparator jSeparator4;
     private javax.swing.JButton jb_addjuego;
+    private javax.swing.JButton jb_addjuego1;
+    private javax.swing.JButton jb_addjuego2;
     private javax.swing.JButton jb_agregarest;
     private javax.swing.JButton jb_agregarest1;
     private javax.swing.JButton jb_agregarpor;
@@ -1748,6 +2087,8 @@ public class AdminTienda extends javax.swing.JFrame {
     private javax.swing.JDialog jd_listjuegos;
     private javax.swing.JDialog jd_modjuego;
     private com.toedter.calendar.JDateChooser jdc_fechajueg;
+    private com.toedter.calendar.JDateChooser jdc_fechajueg1;
+    private com.toedter.calendar.JDateChooser jdc_fechajueg2;
     private javax.swing.JPanel jp_agregar;
     private javax.swing.JPanel jp_estacionaria;
     private javax.swing.JPanel jp_estacionaria1;
@@ -1765,10 +2106,15 @@ public class AdminTienda extends javax.swing.JFrame {
     private javax.swing.JSpinner js_batpor;
     private javax.swing.JSpinner js_batpor1;
     private javax.swing.JSpinner js_cantjueg;
+    private javax.swing.JSpinner js_cantjueg1;
+    private javax.swing.JSpinner js_cantjueg2;
     private javax.swing.JSpinner js_controlesest1;
     private javax.swing.JSpinner js_controlesest2;
     private javax.swing.JTable jt_consolas;
+    private javax.swing.JList<String> lt_juego;
     private javax.swing.JTextArea ta_desc;
+    private javax.swing.JTextArea ta_desc1;
+    private javax.swing.JTextArea ta_desc2;
     private javax.swing.JTextField tf_conexionest;
     private javax.swing.JTextField tf_conexionest1;
     private javax.swing.JTextField tf_fabest;
@@ -1780,10 +2126,14 @@ public class AdminTienda extends javax.swing.JFrame {
     private javax.swing.JTextField tf_modest;
     private javax.swing.JTextField tf_modest1;
     private javax.swing.JTextField tf_nomjueg;
+    private javax.swing.JTextField tf_nomjueg1;
+    private javax.swing.JTextField tf_nomjueg2;
     private javax.swing.JTextField tf_precioest;
     private javax.swing.JTextField tf_precioest1;
     private javax.swing.JTextField tf_preciopor;
     private javax.swing.JTextField tf_preciopor1;
     private javax.swing.JTextField tf_precjug;
+    private javax.swing.JTextField tf_precjug1;
+    private javax.swing.JTextField tf_precjug2;
     // End of variables declaration//GEN-END:variables
 }
