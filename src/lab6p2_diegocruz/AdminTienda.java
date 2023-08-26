@@ -1659,7 +1659,7 @@ public class AdminTienda extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton2MouseClicked
 
     private void jButton3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton3MouseClicked
-        jp_agregar.setVisible(false);
+        jp_agregar.setVisible(true);
         jp_portatil.setVisible(true);
         jp_estacionaria.setVisible(false);
         jp_listarcons.setVisible(false);
@@ -1669,7 +1669,7 @@ public class AdminTienda extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton3MouseClicked
 
     private void jButton4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton4MouseClicked
-        jp_agregar.setVisible(false);
+        jp_agregar.setVisible(true);
         jp_portatil.setVisible(false);
         jp_estacionaria.setVisible(true);
         jp_listarcons.setVisible(false);
