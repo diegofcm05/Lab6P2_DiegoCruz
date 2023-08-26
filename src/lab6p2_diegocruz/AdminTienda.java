@@ -35,6 +35,7 @@ public class AdminTienda extends javax.swing.JFrame {
         jp_estacionaria1.setVisible(false);
         jp_portatil1.setVisible(false);
         jp_modificar.setVisible(false);
+        
     }
 
     /**
@@ -162,7 +163,6 @@ public class AdminTienda extends javax.swing.JFrame {
         jScrollPane1 = new javax.swing.JScrollPane();
         jt_consolas = new javax.swing.JTable();
         jButton7 = new javax.swing.JButton();
-        jLabel2 = new javax.swing.JLabel();
         jp_modificar = new javax.swing.JPanel();
         jLabel32 = new javax.swing.JLabel();
         jSeparator4 = new javax.swing.JSeparator();
@@ -203,7 +203,8 @@ public class AdminTienda extends javax.swing.JFrame {
         jLabel48 = new javax.swing.JLabel();
         jLabel49 = new javax.swing.JLabel();
         js_anospor1 = new javax.swing.JSpinner();
-        jb_agregarpor1 = new javax.swing.JButton();
+        jb_modpor1 = new javax.swing.JButton();
+        jLabel2 = new javax.swing.JLabel();
 
         jPanel1.setBackground(new java.awt.Color(255, 153, 204));
         jPanel1.setForeground(new java.awt.Color(255, 153, 204));
@@ -472,6 +473,11 @@ public class AdminTienda extends javax.swing.JFrame {
         );
 
         Modificar.setText("Modificar Juego");
+        Modificar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ModificarActionPerformed(evt);
+            }
+        });
         jPopupMenu1.add(Modificar);
 
         Eliminar.setText("Eliminar Juego");
@@ -1206,10 +1212,6 @@ public class AdminTienda extends javax.swing.JFrame {
         });
         jp_main.add(jButton7, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 260, 170, 40));
 
-        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/lab6p2_diegocruz/fondolab6.jpg"))); // NOI18N
-        jLabel2.setText("jLabel2");
-        jp_main.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1000, 540));
-
         jp_modificar.setBackground(new java.awt.Color(0, 102, 204));
 
         jLabel32.setFont(new java.awt.Font("MV Boli", 1, 18)); // NOI18N
@@ -1439,13 +1441,13 @@ public class AdminTienda extends javax.swing.JFrame {
         jLabel49.setFont(new java.awt.Font("Segoe UI Historic", 1, 12)); // NOI18N
         jLabel49.setText("Tamaño de Pantalla:");
 
-        jb_agregarpor1.setBackground(new java.awt.Color(204, 153, 255));
-        jb_agregarpor1.setFont(new java.awt.Font("Segoe UI Historic", 1, 14)); // NOI18N
-        jb_agregarpor1.setForeground(new java.awt.Color(0, 0, 0));
-        jb_agregarpor1.setText("Modificar");
-        jb_agregarpor1.addMouseListener(new java.awt.event.MouseAdapter() {
+        jb_modpor1.setBackground(new java.awt.Color(204, 153, 255));
+        jb_modpor1.setFont(new java.awt.Font("Segoe UI Historic", 1, 14)); // NOI18N
+        jb_modpor1.setForeground(new java.awt.Color(0, 0, 0));
+        jb_modpor1.setText("Modificar");
+        jb_modpor1.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jb_agregarpor1MouseClicked(evt);
+                jb_modpor1MouseClicked(evt);
             }
         });
 
@@ -1486,7 +1488,7 @@ public class AdminTienda extends javax.swing.JFrame {
                             .addComponent(cb_tampor1, javax.swing.GroupLayout.PREFERRED_SIZE, 135, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel49, javax.swing.GroupLayout.PREFERRED_SIZE, 134, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(jp_portatil1Layout.createSequentialGroup()
-                        .addComponent(jb_agregarpor1, javax.swing.GroupLayout.PREFERRED_SIZE, 190, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jb_modpor1, javax.swing.GroupLayout.PREFERRED_SIZE, 190, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addGroup(jp_portatil1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(js_batpor1, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -1532,7 +1534,7 @@ public class AdminTienda extends javax.swing.JFrame {
                         .addComponent(jLabel48, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(js_batpor1, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(jb_agregarpor1, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jb_modpor1, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(31, 31, 31))
         );
 
@@ -1589,6 +1591,10 @@ public class AdminTienda extends javax.swing.JFrame {
 
         jp_main.add(jp_modificar, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 70, 660, 460));
 
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/lab6p2_diegocruz/fondolab6.jpg"))); // NOI18N
+        jLabel2.setText("jLabel2");
+        jp_main.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1000, 540));
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -1642,20 +1648,32 @@ public class AdminTienda extends javax.swing.JFrame {
     private void jButton2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton2MouseClicked
         jp_agregar.setVisible(true);
         jp_portatil.setVisible(true);
+        jp_estacionaria.setVisible(false);
         jp_listarcons.setVisible(false);
+        jp_estacionaria1.setVisible(false);
+        jp_portatil1.setVisible(false);
+        jp_modificar.setVisible(false);
         
     }//GEN-LAST:event_jButton2MouseClicked
 
     private void jButton3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton3MouseClicked
-        jp_estacionaria.setVisible(false);
+        jp_agregar.setVisible(false);
         jp_portatil.setVisible(true);
+        jp_estacionaria.setVisible(false);
         jp_listarcons.setVisible(false);
+        jp_estacionaria1.setVisible(false);
+        jp_portatil1.setVisible(false);
+        jp_modificar.setVisible(false);
     }//GEN-LAST:event_jButton3MouseClicked
 
     private void jButton4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton4MouseClicked
-        jp_estacionaria.setVisible(true);
+        jp_agregar.setVisible(false);
         jp_portatil.setVisible(false);
+        jp_estacionaria.setVisible(true);
         jp_listarcons.setVisible(false);
+        jp_estacionaria1.setVisible(false);
+        jp_portatil1.setVisible(false);
+        jp_modificar.setVisible(false);
     }//GEN-LAST:event_jButton4MouseClicked
 
     private void jb_agregarporMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jb_agregarporMouseClicked
@@ -1727,9 +1745,12 @@ public class AdminTienda extends javax.swing.JFrame {
 
     private void jButton7MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton7MouseClicked
         jp_agregar.setVisible(false);
-        jp_estacionaria.setVisible(false);
         jp_portatil.setVisible(false);
+        jp_estacionaria.setVisible(false);
         jp_listarcons.setVisible(true);
+        jp_estacionaria1.setVisible(false);
+        jp_portatil1.setVisible(false);
+        jp_modificar.setVisible(false);
         
         
         
@@ -1890,12 +1911,82 @@ public class AdminTienda extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_tf_preciopor1ActionPerformed
 
-    private void jb_agregarpor1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jb_agregarpor1MouseClicked
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jb_agregarpor1MouseClicked
+    private void jb_modpor1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jb_modpor1MouseClicked
+        String tam, id, fab, modelo;
+        int bat, anuso;
+        boolean estuche = false;
+        double precio = 0;
+        try {
+            
+            tam = cb_tampor1.getSelectedItem().toString();
+            id = genid();
+            fab = tf_fabport1.getText();
+            modelo = tf_modelopor1.getText();
+            bat = ((Integer) js_batpor1.getValue());
+            anuso = ((Integer) js_anospor1.getValue());
+            precio = Double.parseDouble(tf_preciopor1.getText());
+            if (jRadioButton9.isSelected()){
+                estuche = true;
+            }
+            else if (jRadioButton10.isSelected()){
+                estuche = false;
+            }
+            Portatil xa = new Portatil(tam,bat, estuche,id, fab, modelo, anuso, precio);
+            int ind = jt_consolas.getSelectedRow();
+            consolas.remove(ind);
+            consolas.add(ind, xa);
+            tf_fabport1.setText("");
+            tf_modelopor1.setText("");
+            tf_preciopor1.setText("");
+            js_anospor1.setValue(0);
+            js_batpor1.setValue(0);
+            JOptionPane.showMessageDialog(jp_modificar, "La consola ha sido modificada exitosamente!");
+            
+
+        } 
+        catch (Exception e) {
+            JOptionPane.showMessageDialog(jp_agregar, "Ha ocurrido un error.\nIntente mod de nuevo.");
+        }
+    }//GEN-LAST:event_jb_modpor1MouseClicked
 
     private void jb_addjuego2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jb_addjuego2MouseClicked
-        // TODO add your handling code here:
+        String nom, desc;
+        int cant;
+        Date k = new Date();
+        boolean nuev= false;
+        boolean ren= false;
+        boolean addon= false;
+        double prec;
+        nom = tf_nomjueg.getText();
+        desc = ta_desc.getText();
+        cant = ((Integer)js_cantjueg.getValue());
+        k = jdc_fechajueg.getDate();
+        prec = Double.parseDouble(tf_precjug.getText());
+        if (jRadioButton3.isSelected()){
+            nuev = true;
+            
+        }
+        else if (jRadioButton4.isSelected()){
+            nuev = false;
+            
+        }
+        if (jRadioButton5.isSelected()){
+            ren = true;
+            
+        }
+        else if (jRadioButton6.isSelected()){
+            ren = false;
+            
+        }
+        if (jRadioButton7.isSelected()){
+            addon = true;
+            
+        }
+        else if (jRadioButton8.isSelected()){
+            addon = false;
+        }
+        Juego ab = new Juego(nom, desc, k, prec, nuev, ren, addon, cant);
+        consolas.get(jt_consolas.getSelectedRow()).getJuegos().add(ab); 
     }//GEN-LAST:event_jb_addjuego2MouseClicked
 
     private void jt_consolasKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jt_consolasKeyPressed
@@ -1961,18 +2052,33 @@ public class AdminTienda extends javax.swing.JFrame {
 
     private void ModificarConsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ModificarConsActionPerformed
         if (consolas.get(jt_consolas.getSelectedRow() ) instanceof Portatil){
+            jp_agregar.setVisible(false);
+            jp_portatil.setVisible(false);
+            jp_estacionaria.setVisible(false);
             jp_listarcons.setVisible(false);
-            jp_modificar.setVisible(true);
+            jp_estacionaria1.setVisible(false);
             jp_portatil1.setVisible(true);
+            jp_modificar.setVisible(true);
             
             
         }
         if (consolas.get(jt_consolas.getSelectedRow() ) instanceof Estacionaria){
+            jp_agregar.setVisible(false);
+            jp_portatil.setVisible(false);
+            jp_estacionaria.setVisible(false);
             jp_listarcons.setVisible(false);
-            jp_modificar.setVisible(true);
             jp_estacionaria1.setVisible(true);
+            jp_portatil1.setVisible(false);
+            jp_modificar.setVisible(true);
         }
     }//GEN-LAST:event_ModificarConsActionPerformed
+
+    private void ModificarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ModificarActionPerformed
+        jd_modjuego.pack();
+        jd_modjuego.setModal(true);
+        jd_modjuego.setLocationRelativeTo(this);
+        jd_modjuego.setVisible(true);
+    }//GEN-LAST:event_ModificarActionPerformed
 
     /**
      * @param args the command line arguments
@@ -2154,8 +2260,8 @@ public class AdminTienda extends javax.swing.JFrame {
     private javax.swing.JButton jb_addjuego2;
     private javax.swing.JButton jb_agregarest;
     private javax.swing.JButton jb_agregarpor;
-    private javax.swing.JButton jb_agregarpor1;
     private javax.swing.JButton jb_modest;
+    private javax.swing.JButton jb_modpor1;
     private javax.swing.JDialog jd_addjuego;
     private javax.swing.JDialog jd_listjuegos;
     private javax.swing.JDialog jd_modjuego;
